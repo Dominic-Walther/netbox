@@ -29,6 +29,7 @@ def get_serializer_for_model(model, prefix=''):
         app_name = 'users'
     serializer_name = f'{app_name}.api.serializers.{prefix}{model_name}Serializer'
     try:
+        print(serializer_name)
         return dynamic_import(serializer_name)
     except AttributeError:
         raise SerializerNotFound(
