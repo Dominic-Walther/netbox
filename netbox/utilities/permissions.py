@@ -34,7 +34,7 @@ def resolve_permission(name):
     """
     try:
         app_label, codename = name.split('.')
-        action, model_name = codename.rsplit('_', 1)
+        action, model_name = codename.split('_', 1)
     except ValueError:
         raise ValueError(
             f"Invalid permission name: {name}. Must be in the format <app_label>.<action>_<model>"
